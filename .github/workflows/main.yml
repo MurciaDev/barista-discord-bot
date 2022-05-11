@@ -15,8 +15,8 @@ jobs:
 
     steps:
       - name: CafeReminder
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       - uses: Ilshidur/action-discord@master
         with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
           args: 'ℹ️  Recordad que hoy hay café a las 🕛  12PM!!  🙌 '
