@@ -1,0 +1,22 @@
+name: Bot to send reminder to Discord
+
+# Controls when the workflow will run
+on:
+  schedule:
+    # cron schedules run on UTC time
+    - cron:  '00 8,9 * * thu' # this will run at 10, 11 on thursdays 
+    - cron:  '30,45 9 * * thu' # this will run at 11:30 and 11:45 on thursdays 
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: CafeReminder
+      - uses: Ilshidur/action-discord@master
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          args: 'ℹ️  Recordad que hoy hay café a las 🕛  12PM!!  🙌 '
