@@ -3,8 +3,8 @@ name: Bot to send reminder to Discord
 on:
   schedule:
     # cron schedules run on UTC time
-    - cron:  '00 8,9 * * thu' # this will run at 10, 11 on thursdays 
-    - cron:  '30,45 9 * * thu' # this will run at 11:30 and 11:45 on thursdays 
+    - cron:  '00 8 * * thu' # this will run at 10 on thursdays 
+    - cron:  '45 9 * * thu' # this will run at 11:45 on thursdays 
 
   workflow_dispatch:
 
